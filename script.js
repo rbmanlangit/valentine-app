@@ -78,17 +78,15 @@ function catchNo() {
 }
 
 const heartCount = 30; // number of hearts
-
 for (let i = 0; i < heartCount; i++) {
   const heart = document.createElement('div');
   heart.textContent = "❤️"; // the heart emoji
   heart.style.position = "absolute";
 
   // Random horizontal position
-  heart.style.left = Math.random() * 100 + "vw";
-
+  heart.style.left = Math.random() * 90 + "vw";
   // Random size
-  const startY = Math.random() * 100; // 0% to 100% of viewport height
+  const startY = Math.random() * 90; // 0% to 100% of viewport height
   heart.style.fontSize = startY + "px";
   heart.style.bottom = `-${startY}vh`; // negative because CSS animation uses translateY
 
@@ -102,31 +100,34 @@ for (let i = 0; i < heartCount; i++) {
   document.body.appendChild(heart);
 }
 
-const bgHeartCount = 50; // number of hearts in background
+const bgHeartCount = 50
 for (let i = 0; i < bgHeartCount; i++) {
   const heart = document.createElement('div');
   heart.classList.add('background-heart');
 
-  // Random heart emoji
   const hearts = ["❤️","💖","💘","💕","💞"];
   heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
 
-  // Random position
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.top = Math.random() * 100 + "vh";
-  heart.style.bottom = `-${startY}vh`; // negative because CSS animation uses translateY
+  // Random screen position (already visible)
+  const startY = Math.random() * 90;
+  const startX = Math.random() * 90;
+  heart.style.left = `${startX}vw`;
+  heart.style.top = `${startY}vh`;
 
   // Random size
-  const size = 10 + Math.random() * 30;
+  const size = 10 + Math.random() * 50;
   heart.style.fontSize = size + "px";
-  heart.style.bottom = `-${size}vh`; // negative because CSS animation uses translateY
 
-  // Optional: random float speed
-  const duration = 20 + Math.random() * 20; // 20s to 40s
+  // Random speed
+  const duration = 20 + Math.random() * 20;
   heart.style.animationDuration = duration + "s";
+
+  // Random delay so they are already moving
+  heart.style.animationDelay = `-${Math.random() * duration}s`;
 
   document.body.appendChild(heart);
 }
+
 
 yesBtn.addEventListener('click', () => {
   // Hide the main card if needed

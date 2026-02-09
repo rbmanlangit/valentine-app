@@ -1,3 +1,11 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* prevent scroll */
+  height: 100%;
+  width: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
@@ -111,14 +119,16 @@ body {
     rgba(255, 183, 178, 0.6) );
   padding: 2rem;
   border-radius: 2rem;
-  left: 7.5%;
   width: 90%;
   max-width: 400px;
   text-align: center;
   box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.2);
   z-index: 10; /* make sure it’s above the hearts */
+}@media screen and (max-width: 400px) {
+  .card {
+    width: 75%;
+  }
 }
-
 
 h1 {
   font-size: 2rem;
