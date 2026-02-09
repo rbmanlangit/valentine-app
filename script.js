@@ -114,6 +114,7 @@ for (let i = 0; i < bgHeartCount; i++) {
   // Random position
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.top = Math.random() * 100 + "vh";
+  heart.style.bottom = `-${startY}vh`; // negative because CSS animation uses translateY
 
   // Random size
   const size = 10 + Math.random() * 30;
