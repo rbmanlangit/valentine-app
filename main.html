@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>My Valentine 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+    <body>
+        <div class="card" id="card">
+        <h1>Hi Babu 💕</h1>
+        <p>I made this just for you…</p>
+        <button onclick="start()">Continue</button>
+        </div>
+
+        <div class="card hidden" id="question">
+        <h1> Will you be my Valentine? 💖</h1>
+        <p>You mean the world to me.</p>
+
+        <div class="buttons" style="height:80px;">
+            <button class="yes" onclick="yes()">Yes</button>
+            <button class="no" id="noBtn">No</button>
+        </div>
+        </div>
+
+        <div class="card hidden" id="result">
+        <h2>Yay!! 💘</h2>
+        <p>You just made me the happiest person 💕</p>
+        <p>Happy Valentine’s Day, Babu 🥰</p>
+        <p id="meeting" class="fade-hidden"><strong>See you on 14 at 3 PM! 💌</strong></p>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
