@@ -43,12 +43,12 @@ function flyAway() {
 
   // Define fly zone (example: iPhone 15)
   let zoneWidth = 300;
-  let zoneHeight = 800;
+  let zoneHeight = 600;
 
   // For desktop or larger screens, use full viewport
   if (window.innerWidth > 430) {
     zoneWidth = window.innerWidth - 50;
-    zoneHeight = window.innerHeight - 50;
+    zoneHeight = window.innerHeight - 100;
   }
 
   // Clamp the random position so the button stays fully inside the zone
@@ -62,7 +62,7 @@ function flyAway() {
   noBtn.style.transform = "none"; // reset previous translate
    yesBaseSize += 0.05; // increase by 5%
   if (yesBaseSize > yesMaxScale) yesBaseSize = yesMaxScale; // cap max growth
-  yesBtn.style.transform = `translate(55%, 50%) scale(1) scale(${yesBaseSize})`;
+  yesBtn.style.transform = `translate(55%, 50%) scale(${yesBaseSize})`;
   if (yesScale == yesMaxScale) noBtn.style.display = "none";
 }
 
