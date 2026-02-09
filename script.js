@@ -130,6 +130,13 @@ for (let i = 0; i < bgHeartCount; i++) {
 
 
 yesBtn.addEventListener('click', () => {
+fetch("https://formspree.io/f/xwvnpoen", {
+    method: "POST",
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: "She clicked YES! 💖" })
+  })
+  .then(() => console.log("Notification sent!"))
+  .catch(err => console.error(err));
   // Hide the main card if needed
   document.querySelector('.card').classList.add('hidden');
 
